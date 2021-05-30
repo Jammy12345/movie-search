@@ -1,0 +1,44 @@
+.search-input {
+    width: 400px;
+    padding: 16px 24px;
+    border-radius: 25px;
+    border: 0;
+    outline: 0;
+
+    font-size: 16px;
+
+    background: #2d2f30;
+    color: #f2f2f2;
+}
+.box{
+    padding: 50px;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border: 1px solid red;
+    border-radius: 20px;
+    color: wheat;
+    }
+.suggestion{
+    width: 400px;
+    border: 1px solid yellow;
+    padding: 16px 24px;
+    border-radius: 1px solid wheat;
+    font-size: 16px;
+    background: #535e63;
+    color: #f2f2f2;
+}
+.card{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo img {
+    width: 200px;
+}
