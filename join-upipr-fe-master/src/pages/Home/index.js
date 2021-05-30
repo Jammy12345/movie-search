@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import logo from './star-wars-logo.png';
 import './index.css';
 import axios from "axios"
 import NotFound from "../NotFound";
 import { useHistory } from 'react-router';
+import {debounce} from "../../utils/debounce";
 
 function HomePage() {
   const history = useHistory()
@@ -38,6 +39,8 @@ function HomePage() {
         setError(false)
       }
     }
+
+    const memo = useCallback(debounce((searchinput) => handleChange(searchinput)));
     
     setSuggestion(matches)
     setsearchinput(searchinput)
@@ -48,7 +51,7 @@ function HomePage() {
       <div className="logo">
         <img src={logo} alt="Star Wars Logo" />
       </div>
-      <input className="search-input" onChange={(e) => handleChange(e.target.value)} type="text"
+      <input className="search-input" onChange={(e) =>{ memo(e); handleChange(e.target.value)}} type="text"
         placeholder="Search by name"
         value={searchinput}
       />
